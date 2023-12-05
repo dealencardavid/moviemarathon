@@ -25,13 +25,19 @@ function ContactForm() {
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: encode({
         "form-name": "contact",
-        name: name,
+        firstName: name,
+        lastName: lastName,
         email: email,
-        text: message,
+        message: message,
       }),
     })
-      .then((res) => console.log(res))
+      .then(isOpen(true))
       .catch((error) => alert(error));
+
+    setName("");
+    setLastName("");
+    setEmail("");
+    setMessage("");
   };
 
   return (
