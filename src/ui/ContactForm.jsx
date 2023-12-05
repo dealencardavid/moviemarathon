@@ -4,6 +4,12 @@ import { HiOutlineEnvelope, HiMiniXMark } from "react-icons/hi2";
 import Section from "../ui/Section";
 import { motion, AnimatePresence } from "framer-motion";
 
+const encode = (data) => {
+  return Object.keys(data)
+    .map((key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+    .join("&");
+};
+
 function ContactForm() {
   const [isOpen, setIsOpen] = useState(false);
   const [name, setName] = useState("");
@@ -14,15 +20,17 @@ function ContactForm() {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    const form = event.target;
-    const formData = new FormData(form);
-
     fetch("/", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: new URLSearchParams(formData).toString(),
+      body: encode({
+        "form-name": "contact",
+        name: name,
+        email: email,
+        text: message,
+      }),
     })
-      .then(() => setIsOpen(true))
+      .then((res) => console.log(res))
       .catch((error) => alert(error));
   };
 
@@ -44,6 +52,7 @@ function ContactForm() {
           name="contact"
           method="POST"
           data-netlify="true"
+          onSubmit={(e) => handleSubmit(e)}
         >
           <input type="hidden" name="form-name" value="contact" />
           <label htmlFor="firstName" className="block relative">
@@ -111,7 +120,6 @@ function ContactForm() {
           </label>
           <button
             type="submit"
-            onClick={handleSubmit}
             className="bg-main-500 text-sm font-medium text-white py-3 rounded-lg md:col-span-2"
           >
             Send message
