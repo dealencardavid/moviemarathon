@@ -7,21 +7,20 @@ import { motion, AnimatePresence } from "framer-motion";
 function ContactForm() {
   const [isOpen, setIsOpen] = useState(false);
 
-  // const handleSubmit = async (e) => {
-  //   e.preventDefault();
-  //   try {
-  //     const response = await fetch("/", {
-  //       method: "POST",
-  //       headers: { "Content-Type": "application/x-www-form-urlencoded" },
-  //       body: new URLSearchParams(new FormData(e.target)).toString(),
-  //     });
-  //     if (response.ok) {
-  //       setIsOpen((isOpen) => !isOpen);
-  //     }
-  //   } catch (error) {
-  //     console.error(error);
-  //   }
-  // };
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    const myForm = event.target;
+    const formData = new FormData(myForm);
+
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams(formData).toString(),
+    })
+      .then(() => setIsOpen(true))
+      .catch((error) => alert(error));
+  };
 
   return (
     <Section light={true}>
@@ -100,7 +99,7 @@ function ContactForm() {
           </label>
           <button
             type="submit"
-            // onClick={handleSubmit}
+            onClick={handleSubmit}
             className="bg-main-500 text-sm font-medium text-white py-3 rounded-lg md:col-span-2"
           >
             Send message
