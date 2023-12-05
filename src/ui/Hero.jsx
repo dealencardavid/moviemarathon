@@ -59,7 +59,7 @@ function Hero() {
         <img
           alt="Mockup screen of the MovieMarathon app"
           src={mockup}
-          className="border-[0.35px] border-stone-200 rounded-lg drop-shadow-main"
+          className="border-[0.35px] border-stone-200 rounded-lg drop-shadow-main min-h-fit"
         />
       </section>
     </>
