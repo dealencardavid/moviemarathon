@@ -89,6 +89,7 @@ function TechPeek({ label, title, img, children, btn = "Link", link }) {
           <a
             className="text-main-400 underline w-fit text-base font-medium rounded-md hover:text-main-500 transition-colors duration-200"
             href={link}
+            target="blank"
           >
             {btn}
           </a>

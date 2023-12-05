@@ -9,69 +9,24 @@ const cards = [
     marathonTitle: "ChronoQuest",
     description: "Movies about time travel adventures.",
 
-    cover: [
-      "../../src/assets/marathons/chronoquest/backtothefuture.svg",
-      "../../src/assets/marathons/chronoquest/primer.svg",
-      "../../src/assets/marathons/chronoquest/interstellar.svg",
-      "../../src/assets/marathons/chronoquest/timecrimes.svg",
-      "../../src/assets/marathons/chronoquest/groundhogday.svg",
-      "../../src/assets/marathons/chronoquest/thetimemachine.svg",
-      "../../src/assets/marathons/chronoquest/edgeoftomorrow.svg",
-      "../../src/assets/marathons/chronoquest/looper.svg",
-      "../../src/assets/marathons/chronoquest/donniedarko.svg",
-    ],
+    cover: "../../src/assets/marathons/chronoquest.png",
   },
   {
     marathonTitle: "Celestial Odyssey",
     description: "Unveiling cosmic mysteries and exploring the depths of space",
-    cover: [
-      "../../src/assets/marathons/celestialodyssey/poster.svg",
-      "../../src/assets/marathons/celestialodyssey/poster-1.svg",
-      "../../src/assets/marathons/celestialodyssey/poster-2.svg",
-      "../../src/assets/marathons/celestialodyssey/poster-3.svg",
-      "../../src/assets/marathons/celestialodyssey/poster-4.svg",
-      "../../src/assets/marathons/celestialodyssey/poster-5.svg",
-      "../../src/assets/marathons/celestialodyssey/poster-6.svg",
-      "../../src/assets/marathons/celestialodyssey/poster-7.svg",
-      "../../src/assets/marathons/celestialodyssey/poster-8.svg",
-    ],
+    cover: "../../src/assets/marathons/celestialodyssey.png",
   },
   {
-    marathonTitle: "Criminal Conumdrum",
+    marathonTitle: "Criminal Conundrum",
     description:
       "Crime epics: unraveling the intricacies of power, greed, and intrigue.",
-    cover: [
-      "../../src/assets/marathons/criminalconundrum/poster.svg",
-      "../../src/assets/marathons/criminalconundrum/poster-1.svg",
-      "../../src/assets/marathons/criminalconundrum/poster-2.svg",
-      "../../src/assets/marathons/criminalconundrum/poster-3.svg",
-      "../../src/assets/marathons/criminalconundrum/poster-4.svg",
-      "../../src/assets/marathons/criminalconundrum/poster-5.svg",
-      "../../src/assets/marathons/criminalconundrum/poster-6.svg",
-      "../../src/assets/marathons/criminalconundrum/poster-7.svg",
-      "../../src/assets/marathons/criminalconundrum/poster-8.svg",
-    ],
+    cover: "../../src/assets/marathons/crimeconundrum.png",
   },
   {
     marathonTitle: "Midnight Shivers",
     description: "A haunting collection of horror classics.",
-    cover: [
-      "../../src/assets/marathons/midnightshivers/poster.svg",
-      "../../src/assets/marathons/midnightshivers/poster-1.svg",
-      "../../src/assets/marathons/midnightshivers/poster-2.svg",
-      "../../src/assets/marathons/midnightshivers/poster-3.svg",
-      "../../src/assets/marathons/midnightshivers/poster-4.svg",
-      "../../src/assets/marathons/midnightshivers/poster-5.svg",
-      "../../src/assets/marathons/midnightshivers/poster-6.svg",
-      "../../src/assets/marathons/midnightshivers/poster-7.svg",
-      "../../src/assets/marathons/midnightshivers/poster-8.svg",
-    ],
+    cover: "../../src/assets/marathons/midnightshivers.png",
   },
-  // {
-  //   marathonTitle: "Nicolas Cage Fest",
-  //   description: "The best and most iconic films starring Nicolas Cage.",
-  //   cover: "../../src/assets/cards-cover.png",
-  // },
 ];
 
 function Community() {
@@ -136,12 +91,7 @@ function CommunityCard({ title, description, cover }) {
             {description}
           </p>
         </div>
-
-        <div className="grid grid-cols-3">
-          {cover.map((movie, index) => (
-            <img loading="lazy" alt="movie poster" src={movie} key={index} />
-          ))}
-        </div>
+        <img loading="lazy" alt="movie poster" src={cover} />
       </div>
     </motion.div>
   );
