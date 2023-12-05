@@ -19,6 +19,7 @@ function TakeAPeek() {
           title="Design and Code architecture"
           img={figmaCover}
           btn="Figma file"
+          link="https://www.figma.com/file/goHvgb0ytH8WO8yBUJXGFT/MovieApp?type=design&t=5EZ4K8NbNIzrFPsG-6"
         >
           In this Figma file, you&apos;ll find an overview of the influences and
           design decisions shaping both the website and the web app (currently
@@ -30,6 +31,7 @@ function TakeAPeek() {
           title="Codebase"
           img={githubCover}
           btn="Github repository"
+          link="https://github.com/dealencardavid/moviemarathon"
         >
           Here, you&apos;ll discover the repository for this project. Feel free
           to explore the code and see how it was developed! Your feedback and
@@ -42,7 +44,7 @@ function TakeAPeek() {
 
 export default TakeAPeek;
 
-function TechPeek({ label, title, img, children, btn = "Link" }) {
+function TechPeek({ label, title, img, children, btn = "Link", link }) {
   return (
     <motion.div
       initial="initial"
@@ -86,7 +88,7 @@ function TechPeek({ label, title, img, children, btn = "Link" }) {
         >
           <a
             className="text-main-400 underline w-fit text-base font-medium rounded-md hover:text-main-500 transition-colors duration-200"
-            href="#"
+            href={link}
           >
             {btn}
           </a>
