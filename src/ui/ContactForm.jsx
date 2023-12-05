@@ -17,6 +17,13 @@ function ContactForm() {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
 
+  function resetForm() {
+    setName("");
+    setLastName("");
+    setEmail("");
+    setMessage("");
+  }
+
   const handleSubmit = (event) => {
     event.preventDefault();
 
@@ -31,13 +38,9 @@ function ContactForm() {
         message: message,
       }),
     })
-      .then(isOpen(true))
+      .then(setIsOpen(true))
+      .then(resetForm())
       .catch((error) => alert(error));
-
-    setName("");
-    setLastName("");
-    setEmail("");
-    setMessage("");
   };
 
   return (
