@@ -43,7 +43,7 @@ function Hero() {
           </div>
         </motion.div>
       </motion.section>
-      <section className="relative h-screen py-16 px-28 flex flex-col w-full items-center gap-16  bg-stone-900 before:h-72 before:w-72 before:rounded-full  before:pointer-events-none before:absolute before:z-0 before:bg-main-500 before:opacity-40 before:blur-[200px] before:left-1/2 before:-translate-x-1/2 before:-top-36 lg:hidden mb-48">
+      <section className="relative h-screen py-16 px-4 mx-auto flex flex-col w-full items-center gap-16  bg-stone-900 before:h-72 before:w-72 before:rounded-full  before:pointer-events-none before:absolute before:z-0 before:bg-main-500 before:opacity-40 before:blur-[200px] before:left-1/2 before:-translate-x-1/2 before:-top-36 lg:hidden sm:mb-48">
         <div className="flex flex-col items-center gap-6 container mx-auto max-w-md">
           <div className="flex flex-col items-center gap-3">
             <Overline>create, curate, celebrate</Overline>
