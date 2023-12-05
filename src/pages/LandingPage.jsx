@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import Community from "../ui/Community";
 import Faq from "../ui/FAQ";
 import Features from "../ui/Features";
@@ -6,6 +7,10 @@ import HowItWorks from "../ui/HowItWorks";
 import MobileFeatures from "../ui/MobileFeatures";
 
 function LandingPage() {
+  useEffect(function () {
+    console.log("Developed by David de Alencar.");
+  }, []);
+
   return (
     <>
       <Hero />
