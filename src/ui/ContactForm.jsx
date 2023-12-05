@@ -6,12 +6,16 @@ import { motion, AnimatePresence } from "framer-motion";
 
 function ContactForm() {
   const [isOpen, setIsOpen] = useState(false);
+  const [name, setName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
 
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    const myForm = event.target;
-    const formData = new FormData(myForm);
+    const form = event.target;
+    const formData = new FormData(form);
 
     fetch("/", {
       method: "POST",
@@ -50,8 +54,10 @@ function ContactForm() {
               required
               type="text"
               id="firstName"
-              name="name"
+              name="firstName"
               placeholder="e.g John"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
               className="peer group w-full py-2 px-2 bg-transparent border-b border-stone-200 placeholder-stone-500 text-stone-50 text-sm focus:outline-none focus:border-main-500"
             />
             <div className="w-0.5 h-1/2 absolute bottom-1 bg-main-500 transition-all duration-200 origin-left scale-x-0 peer-focus:scale-x-100"></div>
@@ -64,8 +70,10 @@ function ContactForm() {
               required
               type="text"
               id="lastName"
-              name="name"
+              name="lastName"
               placeholder="e.g Doe"
+              value={lastName}
+              onChange={(e) => setLastName(e.target.value)}
               className="peer group w-full py-2 px-2 bg-transparent border-b border-stone-200 placeholder-stone-500 text-stone-50 text-sm focus:outline-none focus:border-main-500"
             />
             <div className="w-0.5 h-1/2 absolute bottom-1 bg-main-500 transition-all duration-200 origin-left scale-x-0 peer-focus:scale-x-100"></div>
@@ -80,6 +88,8 @@ function ContactForm() {
               id="email"
               name="email"
               placeholder="e.g john.doe@example.com"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               className="peer group w-full py-2 px-2 bg-transparent border-b border-stone-200 placeholder-stone-500 text-stone-50 text-sm focus:outline-none focus:border-main-500"
             />
             <div className="w-0.5 h-1/2 absolute bottom-1 bg-main-500 transition-all duration-200 origin-left scale-x-0 peer-focus:scale-x-100"></div>
@@ -93,6 +103,8 @@ function ContactForm() {
               id="message"
               name="message"
               placeholder="Type a message here..."
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
               maxLength={500}
               className="group w-full py-2 px-2 mt-2 bg-stone-100 rounded-md border-b placeholder-stone-500 text-stone-800 text-sm focus:outline-main-500"
             />
