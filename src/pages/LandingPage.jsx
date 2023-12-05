@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import Community from "../ui/Community";
-import Faq from "../ui/FAQ";
+import Faq from "../ui/Faq";
 import Features from "../ui/Features";
 import Hero from "../ui/Hero";
 import HowItWorks from "../ui/HowItWorks";
