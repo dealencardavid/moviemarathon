@@ -25,7 +25,12 @@ function ContactForm() {
             together!
           </p>
         </div>
-        <form className="w-full lg:max-w-xl grid grid-cols-1 gap-6 md:grid-cols-2">
+        <form
+          className="w-full lg:max-w-xl grid grid-cols-1 gap-6 md:grid-cols-2"
+          name="contact"
+          method="POST"
+          data-netlify="true"
+        >
           <label htmlFor="firstName" className="block relative">
             <span className="text-stone-50 font-medium text-sm block">
               First name
