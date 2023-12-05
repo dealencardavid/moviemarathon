@@ -7,10 +7,21 @@ import { motion, AnimatePresence } from "framer-motion";
 function ContactForm() {
   const [isOpen, setIsOpen] = useState(false);
 
-  function handleSubmit(e) {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setIsOpen((isOpen) => !isOpen);
-  }
+    try {
+      const response = await fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams(new FormData(e.target)).toString(),
+      });
+      if (response.ok) {
+        setIsOpen((isOpen) => !isOpen);
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  };
 
   return (
     <Section light={true}>
@@ -31,6 +42,7 @@ function ContactForm() {
           method="POST"
           data-netlify="true"
         >
+          <input type="hidden" name="contact-form" value="contact" />
           <label htmlFor="firstName" className="block relative">
             <span className="text-stone-50 font-medium text-sm block">
               First name
@@ -87,6 +99,7 @@ function ContactForm() {
             />
           </label>
           <button
+            type="submit"
             onClick={handleSubmit}
             className="bg-main-500 text-sm font-medium text-white py-3 rounded-lg md:col-span-2"
           >
