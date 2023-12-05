@@ -111,7 +111,7 @@ export default Community;
 
 function CommunityCard({ title, description, cover }) {
   return (
-    <motion.div className="relative h-[500px] md:h-[670px] w-80 md:w-96 rounded-xl bg-gradient-to-br from-main-400 to-main-700 font-body ">
+    <motion.div className="relative h-[525px] md:h-[670px] w-80 md:w-96 rounded-xl bg-gradient-to-br from-main-400 to-main-700 font-body ">
       <div className="absolute inset-1 flex flex-col gap-6 p-6 rounded-xl bg-stone-800 shadow-xl">
         <div className="flex flex-col gap-2 h-28">
           <p className="text-left text-2xl font-semibold text-main-500">
