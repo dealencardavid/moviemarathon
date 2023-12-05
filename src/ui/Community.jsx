@@ -122,7 +122,7 @@ function CommunityCard({ title, description, cover }) {
           </p>
         </div>
         <img
-          className=" w-56 self-center"
+          className=" w-56 md:w-96 self-center"
           loading="lazy"
           alt="movie poster"
           src={cover}
