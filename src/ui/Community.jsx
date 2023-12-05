@@ -4,28 +4,33 @@ import { useRef } from "react";
 import Overline from "./Overline";
 import SupportParagraph from "./SupportParagraph";
 
+import chronoquest from "../assets/marathons/chronoquest.png";
+import criminalconundrum from "../assets/marathons/crimeconundrum.png";
+import celestialodyssey from "../assets/marathons/celestialodyssey.png";
+import midnightshivers from "../assets/marathons/midnightshivers.png";
+
 const cards = [
   {
     marathonTitle: "ChronoQuest",
     description: "Movies about time travel adventures.",
 
-    cover: "/public/marathons/chronoquest.png",
+    cover: chronoquest,
   },
   {
     marathonTitle: "Celestial Odyssey",
     description: "Unveiling cosmic mysteries and exploring the depths of space",
-    cover: "/public/marathons/celestialodyssey.png",
+    cover: celestialodyssey,
   },
   {
     marathonTitle: "Criminal Conundrum",
     description:
       "Crime epics: unraveling the intricacies of power, greed, and intrigue.",
-    cover: "/public/marathons/crimeconundrum.png",
+    cover: criminalconundrum,
   },
   {
     marathonTitle: "Midnight Shivers",
     description: "A haunting collection of horror classics.",
-    cover: "/public/marathons/midnightshivers.png",
+    cover: midnightshivers,
   },
 ];
 
