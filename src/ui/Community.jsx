@@ -9,23 +9,23 @@ const cards = [
     marathonTitle: "ChronoQuest",
     description: "Movies about time travel adventures.",
 
-    cover: "../../src/assets/marathons/chronoquest.png",
+    cover: "../../public/marathons/chronoquest.png",
   },
   {
     marathonTitle: "Celestial Odyssey",
     description: "Unveiling cosmic mysteries and exploring the depths of space",
-    cover: "../../src/assets/marathons/celestialodyssey.png",
+    cover: "../../public/marathons/celestialodyssey.png",
   },
   {
     marathonTitle: "Criminal Conundrum",
     description:
       "Crime epics: unraveling the intricacies of power, greed, and intrigue.",
-    cover: "../../src/assets/marathons/crimeconundrum.png",
+    cover: "../../public/marathons/crimeconundrum.png",
   },
   {
     marathonTitle: "Midnight Shivers",
     description: "A haunting collection of horror classics.",
-    cover: "../../src/assets/marathons/midnightshivers.png",
+    cover: "../../public/marathons/midnightshivers.png",
   },
 ];
 
