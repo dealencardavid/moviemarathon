@@ -75,7 +75,7 @@ function Question({ question, answer, defaultOpen = false }) {
               color: "#e7e5e4",
             },
           }}
-          className="text-base font-medium"
+          className="text-base text-start font-medium"
         >
           {question}
         </motion.span>

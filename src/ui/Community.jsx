@@ -44,30 +44,55 @@ function Community() {
   const headingOpacity = useTransform(scrollYProgress, [0, 0.2], [1, 0]);
 
   return (
-    <section
-      className="h-[300vh] relative bg-stone-900 -my-24 w-full"
-      style={{ x }}
-      ref={targetRef}
-    >
-      <div className="sticky top-0 h-screen flex justify-center items-center overflow-x-clip bg-stone-900">
-        <motion.div
-          className="absolute container flex flex-col gap-5 my-auto px-4 md:px-8 lg:px-28"
-          style={{ opacity: headingOpacity }}
-        >
-          <div className="flex flex-col gap-2 items-start">
-            <Overline>Inspiring Marathons</Overline>
-            <h2 className="text-white text-4xl font-semibold text-left max-w-md">
-              Engage with the community&apos;s curations
-            </h2>
-          </div>
-          <SupportParagraph alignment="left">
-            Join a vibrant community and get inspired by curated marathons
-            shared by other users. Explore an array of thematic movie marathons
-            created by the community, and find inspiration for your next film
-            experience.
-          </SupportParagraph>
-        </motion.div>
-        <motion.div className="flex gap-16" style={{ x }}>
+    <>
+      <section
+        className="h-[300vh] relative bg-stone-900 -my-24 w-full hidden md:block"
+        style={{ x }}
+        ref={targetRef}
+      >
+        <div className="sticky top-0 h-screen flex justify-center items-center overflow-x-clip bg-stone-900">
+          <motion.div
+            className="absolute container flex flex-col gap-5 my-auto px-4 md:px-8 lg:px-28"
+            style={{ opacity: headingOpacity }}
+          >
+            <div className="flex flex-col gap-2 items-start">
+              <Overline>Inspiring Marathons</Overline>
+              <h2 className="text-white text-4xl font-semibold text-left max-w-md">
+                Engage with the community&apos;s curations
+              </h2>
+            </div>
+            <SupportParagraph alignment="left">
+              Join a vibrant community and get inspired by curated marathons
+              shared by other users. Explore an array of thematic movie
+              marathons created by the community, and find inspiration for your
+              next film experience.
+            </SupportParagraph>
+          </motion.div>
+          <motion.div className="flex gap-16" style={{ x }}>
+            {cards.map((card, index) => (
+              <CommunityCard
+                title={card.marathonTitle}
+                key={index}
+                description={card.description}
+                cover={card.cover}
+              />
+            ))}
+          </motion.div>
+        </div>
+      </section>
+      <section className="md:hidden flex flex-col items-center gap-8 lg:gap-20 px-4 md:px-8 lg:px-28 py-16 font-body my-16 container mx-auto bg-stone-900">
+        <div className="flex flex-col gap-2 items-start">
+          <Overline>Inspiring Marathons</Overline>
+          <h2 className="text-white text-4xl font-semibold text-left max-w-md">
+            Engage with the community&apos;s curations
+          </h2>
+        </div>
+        <SupportParagraph alignment="left">
+          Join a vibrant community and get inspired by curated marathons shared
+          by other users. Explore an array of thematic movie marathons created
+          by the community, and find inspiration for your next film experience.
+        </SupportParagraph>
+        <div className="flex flex-col gap-8">
           {cards.map((card, index) => (
             <CommunityCard
               title={card.marathonTitle}
@@ -76,9 +101,9 @@ function Community() {
               cover={card.cover}
             />
           ))}
-        </motion.div>
-      </div>
-    </section>
+        </div>
+      </section>
+    </>
   );
 }
 
