@@ -1,10 +1,10 @@
 import { useEffect } from "react";
-import Community from "../ui/Community";
-import Faq from "../ui/Faq";
-import Features from "../ui/Features";
-import Hero from "../ui/Hero";
-import HowItWorks from "../ui/HowItWorks";
-import MobileFeatures from "../ui/MobileFeatures";
+import Community from "../../ui/Community";
+import Faq from "../../ui/Faq";
+import Features from "../../ui/Features";
+import Hero from "../../ui/Hero";
+import HowItWorks from "../../ui/HowItWorks";
+import MobileFeatures from "../../ui/MobileFeatures";
 
 function LandingPage() {
   useEffect(function () {

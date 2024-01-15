@@ -1,5 +1,5 @@
-import AboutProject from "../ui/AboutProject";
-import TakeAPeek from "../ui/TakeAPeek";
+import AboutProject from "../../ui/AboutProject";
+import TakeAPeek from "../../ui/TakeAPeek";
 
 function AboutPage() {
   return (

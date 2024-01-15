@@ -1,7 +1,7 @@
-import Footer from "../ui/Footer";
-import Header from "../ui/Header";
-import Section from "../ui/Section";
-import SectionHeading from "../ui/SectionHeading";
+import Footer from "../../ui/Footer";
+import Header from "../../ui/Header";
+import Section from "../../ui/Section";
+import SectionHeading from "../../ui/SectionHeading";
 
 function ErrorPage() {
   return (

@@ -142,7 +142,7 @@ function ContactForm() {
 
 export default ContactForm;
 
-const Modal = ({ isOpen, setIsOpen }) => {
+function Modal({ isOpen, setIsOpen }) {
   return (
     <AnimatePresence>
       {isOpen && (
@@ -184,4 +184,4 @@ const Modal = ({ isOpen, setIsOpen }) => {
       )}
     </AnimatePresence>
   );
-};
+}

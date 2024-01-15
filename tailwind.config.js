@@ -7,6 +7,16 @@ export default {
       display: ['"Playfair Display"', "sans-serif"],
     },
     extend: {
+      gridTemplateColumns: {
+        // App layout (Menu + Box)
+        app: "256px 1fr",
+        // Dashboard 2 columns grid
+        dashboard: "576px 576px",
+      },
+      gridTemplateRows: {
+        // App section layout
+        appsection: "48px 1fr",
+      },
       colors: {
         main: {
           50: "#FBE9E7",

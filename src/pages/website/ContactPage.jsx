@@ -1,4 +1,4 @@
-import ContactForm from "../ui/ContactForm";
+import ContactForm from "../../ui/ContactForm";
 
 function ContactPage() {
   return <ContactForm />;
