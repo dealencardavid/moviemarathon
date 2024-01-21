@@ -13,16 +13,10 @@ function CreateAccountPage() {
         </a>
       </div>
       <div className="flex flex-col items-center justify-center grow gap-6 bg-stone-900">
-        <div className="bg-stone-800 flex flex-col gap-8 p-5 rounded-xl font-body shadow-md max-w-sm md:max-w-lg ">
-          <div className="flex flex-col gap-2">
-            <h2 className="text-white font-semibold text-4xl text-center">
-              MovieMarathon is still{" "}
-              <span className="underline"> under development</span>
-            </h2>
-            <p className="text-stone-50 text-center text-base md:text-lg">
-              But we will be up and running as soon as we can.
-            </p>
-          </div>
+        <p className="text-white font-semibold text-4xl text-center">
+          Create your new account
+        </p>
+        <div className="bg-stone-800 flex flex-col gap-8 p-5 rounded-xl font-body shadow-md max-w-sm md:max-w-lg w-full ">
           <SignUpForm />
         </div>
       </div>

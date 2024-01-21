@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { useUser } from "../features/authentication/useUser";
 import { useEffect } from "react";
+import Loader from "./Loader";
 
 function ProtectedRoute({ children }) {
   const navigate = useNavigate();
@@ -18,7 +19,7 @@ function ProtectedRoute({ children }) {
   if (isLoading)
     return (
       <div className=" h-screen bg-stone-900 grid place-items-center">
-        <p className="text-white text-4xl">Is Loading</p>
+        <Loader />
       </div>
     );
 

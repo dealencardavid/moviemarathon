@@ -4,16 +4,16 @@ import toast from "react-hot-toast";
 import { useParams } from "react-router-dom";
 import { useMarathon } from "./useMarathon";
 
-export function useUpdateMarathonMovieWatched() {
+export function useUnwatchMovie() {
   const queryClient = useQueryClient();
-  const { marathonId } = useParams();
+  const { marathonId: defaultMarathonId } = useParams();
   const { marathon } = useMarathon();
 
-  const { mutate: update, isLoading } = useMutation({
-    mutationFn: (updateMovie) => {
+  const { mutate: unwatchMovie, isLoading } = useMutation({
+    mutationFn: ({ updateMovieId, marathonId = defaultMarathonId }) => {
       const updatedMovies = marathon.movies.map((movie) =>
-        movie.id === updateMovie.id
-          ? { ...movie, watched: !movie.watched }
+        movie.id === updateMovieId
+          ? { ...movie, watched: false, score1: 0, score2: 0 }
           : movie
       );
 
@@ -31,5 +31,5 @@ export function useUpdateMarathonMovieWatched() {
     onError: () => toast.error("There was an error while updating"),
   });
 
-  return { update, isLoading };
+  return { unwatchMovie, isLoading };
 }

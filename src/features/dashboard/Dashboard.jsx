@@ -1,39 +1,51 @@
+import Loader from "../../ui/Loader";
+import { useUser } from "../authentication/useUser";
 import { useMarathons } from "../marathons/useMarathons";
 
-import CurrentMarathon from "./CurrentMarathon";
-// import NextMovie from "./NextMovie";
-// import QuickGlance from "./QuickGlance";
+import DashboardEmpty from "./DashboardEmpty";
+import DashboardFull from "./DashboardFull";
 
 function Dashboard() {
-  const { marathons, isLoading } = useMarathons();
+  const { marathons, isLoading: isLoadingMarathons } = useMarathons();
+  const {
+    user: {
+      user_metadata: { fullName },
+    },
+    isLoading: isLoadingUser,
+  } = useUser();
 
-  if (isLoading) return <p>isLoading</p>;
+  if (isLoadingMarathons || isLoadingUser) return <Loader />;
 
-  const lastMarathon =
-    marathons?.length > 0 ? marathons[marathons?.length - 1] : null;
+  const activeMarathon = marathons?.find(
+    (marathon) => marathon.active === true
+  );
+
+  const isFinished = activeMarathon?.movies?.every(
+    (movie) => movie.watched === true
+  );
 
   return (
-    <div className="h-full w-full grid grid-rows-appsection items-center justify-center gap-6 container mx-auto">
-      <div>
-        <h1 className="text-stone-50 text-2xl font-bold">
-          Welcome back, <span className="text-main-500">John Doe</span>
-        </h1>
-        <p className="text-stone-200 text-sm">
-          Ready to continue your marathon?
-        </p>
-      </div>
-      <div className="overflow-auto grid 2xl:grid-cols-dashboard gap-x-8 gap-y-4 ">
-        {/* BOX 1 */}
-        {lastMarathon ? <CurrentMarathon marathon={lastMarathon} /> : ""}
-        <div className="h-full row-span-2 flex flex-col justify-between ">
-          {/* BOX 2 */}
-          {/* {lastMarathon ? <NextMovie marathon={lastMarathon} /> : ""} */}
-
-          {/* BOX 3 */}
-          {/* <QuickGlance userStats={userStats} /> */}
+    <>
+      <div className="w-full max-w-lg mx-auto lg:max-w-none">
+        {/* HEADING */}
+        <div className="w-full max-w-lg flex flex-col">
+          <h1 className="text-stone-50 text-2xl font-bold">
+            Welcome back, <span className="text-main-500">{fullName}</span>
+          </h1>
+          <p className="text-stone-200 text-sm">
+            Ready to continue your marathon?
+          </p>
         </div>
       </div>
-    </div>
+
+      <div className="h-full w-full grid xl:place-items-stretch place-items-center gap-2 xl:grid-cols-[1fr_512px] xl:gap-6 container mx-auto">
+        {activeMarathon ? (
+          <DashboardFull marathon={activeMarathon} isFinished={isFinished} />
+        ) : (
+          <DashboardEmpty />
+        )}
+      </div>
+    </>
   );
 }
 

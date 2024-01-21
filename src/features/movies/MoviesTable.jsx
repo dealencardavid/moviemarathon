@@ -1,13 +1,15 @@
+import { useMarathons } from "../marathons/useMarathons";
+
 import Table from "../../ui/Table";
 import TableBody from "../../ui/TableBody";
-import TableHeading from "../../ui/TableHeading";
-import { useMarathons } from "../marathons/useMarathons";
 import MovieRow from "./MovieRow";
+import Loader from "../../ui/Loader";
+import DashboardEmpty from "../dashboard/DashboardEmpty";
 
 function MoviesTable() {
   const { isLoading, marathons } = useMarathons();
 
-  if (isLoading) return <p>Is Loading</p>;
+  if (isLoading) return <Loader />;
 
   const flatMovies = marathons.flatMap((marathon) =>
     marathon.movies.map((movie) => ({ ...movie, marathonId: marathon.id }))
@@ -31,15 +33,16 @@ function MoviesTable() {
   });
   const movieList = Array.from(moviesMap.values());
 
-  if (!marathons.length)
-    return <p>There are no marathons. Please create one first.</p>;
+  if (isLoading) return <Loader />;
+
+  if (!movieList.length) return <DashboardEmpty />;
 
   return (
     <Table>
-      <TableHeading columns={"2"}>
+      <div className="grid grid-cols-2 w-full bg-stone-900 h-16 rounded-t-lg border-b-[0.5px] border-stone-600  items-center place-items-center">
         <p className="text-stone-50 font-semibold">Movies</p>
         <p className="text-stone-50 font-semibold">Appears in</p>
-      </TableHeading>
+      </div>
       <TableBody>
         {movieList.length
           ? movieList.map((movie, index) => (

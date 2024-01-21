@@ -7,6 +7,7 @@ import MarathonsContainer from "./marathonsContainer";
 import MarathonDetails from "./MarathonDetails";
 import MovieDetails from "./MovieDetails";
 import FilteringBtn from "../../ui/FilteringBtn";
+import Loader from "../../ui/Loader";
 
 function MarathonsPanel() {
   // Querying all marathons from database
@@ -35,7 +36,7 @@ function MarathonsPanel() {
   }
 
   // If is loading
-  if (isLoading) return <p>isLoading</p>;
+  if (isLoading) return <Loader />;
 
   return (
     <div className="w-full h-full flex flex-col gap-7">

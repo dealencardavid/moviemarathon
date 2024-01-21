@@ -3,11 +3,11 @@ import {
   HiOutlineCalendarDays,
   HiOutlineClock,
 } from "react-icons/hi2";
-import Button from "../../ui/Button";
+
 import { useMovieDetails } from "../movies/useMovieDetails";
 
 function NextMovie({ marathon }) {
-  const { marathon_movies: movies } = marathon ?? { marathon_movies: [] };
+  const { movies } = marathon;
   const nextMovie = movies?.find((movie) => !movie.watched);
 
   const {
@@ -22,16 +22,16 @@ function NextMovie({ marathon }) {
   } = useMovieDetails(nextMovie.id);
 
   return (
-    <div className="flex flex-col gap-1">
+    <div className="flex flex-col gap-1 max-w-lg">
       <h3 className=" text-2xl font-semibold text-main-500">Next movie</h3>
-      <div className="bg-stone-800 rounded-md shadow-lg p-1 flex gap-4">
+      <div className="bg-stone-800 rounded-md shadow-lg p-1 flex gap-4 items-center">
         <img src={poster} className=" max-h-80" />
-        <div className="flex flex-col gap-1 py-1 justify-around">
+        <div className="flex flex-col gap-1 py-1">
           <div className="flex flex-col">
             <p className="text-stone-50 text-xl font-medium">{title}</p>
             <p className="text-stone-300 font-medium text-sm">{genre}</p>
           </div>
-          <div className="flex gap-4">
+          <div className="flex gap-2 flex-wrap">
             <div className="flex items-center gap-1 text-sm font-medium text-stone-500">
               <HiOutlineStar className="text-main-400" /> {imdbRating} IMDb
               rating
@@ -45,7 +45,7 @@ function NextMovie({ marathon }) {
           </div>
           <div className="flex flex-col gap-1">
             <p className="text-main-500 text-xs">Filmmaker</p>
-            <div className="flex gap-1 flex-wrap">
+            <div className="flex gap-2 flex-wrap">
               {filmmaker &&
                 filmmaker
                   .split(",")
@@ -62,7 +62,7 @@ function NextMovie({ marathon }) {
           </div>
           <div className="flex flex-col gap-1">
             <p className="text-main-500 text-xs">Cast</p>
-            <div className="flex gap-1 flex-wrap">
+            <div className="flex gap-2 flex-wrap">
               {cast &&
                 cast
                   .split(",")
@@ -78,9 +78,6 @@ function NextMovie({ marathon }) {
             </div>
           </div>
           <p className="text-stone-200 text-base">{nextMovie.text}</p>
-          <div className="flex gap-4">
-            <Button onClick={() => console.log("Hey")}>Rate movie</Button>
-          </div>
         </div>
       </div>
     </div>

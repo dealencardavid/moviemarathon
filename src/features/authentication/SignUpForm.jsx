@@ -20,7 +20,7 @@ function SignUpForm() {
 
   return (
     <form className="flex flex-col gap-5" onSubmit={handleSubmit(onSubmit)}>
-      <label htmlFor="email" className="block">
+      <label htmlFor="fullName" className="block">
         <span className="text-stone-50 font-medium text-sm block mb-1">
           Full name
           {errors?.fullName?.message && (
@@ -60,7 +60,7 @@ function SignUpForm() {
           className="w-full py-2 px-2 bg-stone-50 rounded placeholder-stone-500 text-stone-800 text-sm focus:outline-none focus:ring ring-main-500 transition-all duration-200 disabled:bg-stone-400 disabled:cursor-not-allowed"
         />
       </label>
-      <label htmlFor="email" className="block">
+      <label htmlFor="password" className="block">
         <span className="text-stone-50 font-medium text-sm block mb-1">
           Password (min. 8 characters)
           {errors?.password?.message && (
@@ -83,7 +83,7 @@ function SignUpForm() {
           className="w-full py-2 px-2 bg-stone-50 rounded placeholder-stone-500 text-stone-800 text-sm focus:outline-none focus:ring ring-main-500 transition-all duration-200 disabled:bg-stone-400 disabled:cursor-not-allowed"
         />
       </label>
-      <label htmlFor="email" className="block">
+      <label htmlFor="passwordConfirm" className="block">
         <span className="text-stone-50 font-medium text-sm block mb-1">
           Confirm your password
           {errors?.passwordConfirm?.message && (

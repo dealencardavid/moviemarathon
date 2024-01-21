@@ -1,16 +1,20 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+
+import { useDeleteMarathonMovie } from "./useDeleteMarathonMovie";
+import { useWatchMovie } from "./useWatchMovie";
+import { useUnwatchMovie } from "./useUnwatchMovie";
+
+import RatingForm from "./RatingForm";
 import { HiOutlineXCircle } from "react-icons/hi2";
 import { useMovieDetails } from "../movies/useMovieDetails";
 
-import RatingForm from "./RatingForm";
-import { useUpdateMarathonMovieWatched } from "./useUpdateMarathonMovieWatched";
-import { useDeleteMarathonMovie } from "./useDeleteMarathonMovie";
-import { useNavigate } from "react-router-dom";
-
 function MarathonMovie({ movie }) {
   const navigate = useNavigate();
-  // Fetch toggle watched fn
-  const { update: updateWatched, isLoading } = useUpdateMarathonMovieWatched();
+  // Fetch watch movie
+  const { watchMovie, isLoading: isWatching } = useWatchMovie();
+  // Fetch unwatch movie
+  const { unwatchMovie, isLoading: isUnwatching } = useUnwatchMovie();
 
   // Fetch delete movie
   const { deleteMovie, isDeleting } = useDeleteMarathonMovie();
@@ -20,7 +24,8 @@ function MarathonMovie({ movie }) {
   const [formOpen, setFormOpen] = useState(false);
 
   function handleToggleWatched() {
-    updateWatched(movie);
+    if (movie.watched) unwatchMovie({ updateMovieId: movie.id });
+    if (!movie.watched) watchMovie({ updateMovieId: movie.id });
   }
 
   return (
@@ -37,7 +42,6 @@ function MarathonMovie({ movie }) {
           <a
             className="text-stone-50 text-base font-semibold cursor-pointer transition-all duration-200 hover:text-main-500"
             onClick={() => navigate(`/movies/${movie.id}`)}
-            disabled={isLoading}
           >
             {data.Title}
           </a>
@@ -57,6 +61,7 @@ function MarathonMovie({ movie }) {
               <button
                 className="text-green-800 text-xs font-medium px-2 py-1 bg-green-200 rounded-md transition-all duration-200 hover:bg-green-300 hover:text-green-900 active:scale-95"
                 onClick={handleToggleWatched}
+                disabled={isWatching || isUnwatching}
               >
                 Watched
               </button>
@@ -71,7 +76,7 @@ function MarathonMovie({ movie }) {
             <button
               className="text-yellow-800 text-xs font-medium px-2 py-1 bg-yellow-200 rounded-md transition-all duration-200 hover:bg-yellow-300 hover:text-yellow-900 active:scale-95"
               onClick={handleToggleWatched}
-              // disabled={isLoading}
+              disabled={isWatching || isUnwatching}
             >
               To watch{" "}
             </button>

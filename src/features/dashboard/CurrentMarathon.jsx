@@ -14,16 +14,15 @@ function CurrentMarathon({ marathon }) {
   }, 0);
 
   return (
-    <div className="row-span-2 flex flex-col items-center gap-1">
+    <div className="row-span-2 flex flex-col items-center gap-1 max-w-lg xl:max-w-none w-full">
       <div className="flex flex-col w-full gap-1">
         <h2 className=" text-xl font-semibold text-stone-50">{name}</h2>
-
         <ProgressBar totalMovies={allMovies} watchedMovies={watchedMovies} />
         <p className="text-stone-500 text-xs font-medium">
           {watchedMovies}/{allMovies} movies watched
         </p>
       </div>
-      <div className="hidden p-2 overflow-hidden w-full 2xl:grid 2xl:grid-cols-3 items-center place-items-center gap-2">
+      <div className="hidden p-2 overflow-hidden w-full xl:grid xl:grid-cols-3 items-center place-items-center gap-1">
         {movies.map((movie, index) => {
           return <DashboardMoviePoster movie={movie} key={index} />;
         })}
