@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import DashboardMoviePoster from "./dashboardMoviePoster";
+import DashboardMoviePoster from "./DashboardMoviePoster";
 
 function CurrentMarathon({ marathon }) {
   const { name, movies } = marathon;
