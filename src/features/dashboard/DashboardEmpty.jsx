@@ -127,7 +127,7 @@ function AddMarathonModal({ isOpen, setIsOpen }) {
                   <input
                     id="name"
                     type="text"
-                    className="bg-transparent border-b-2 border-main-500 placeholder-stone-400 text-sm text-stone-50 py-2 focus:outline-none"
+                    className="bg-transparent border-b-2 rounded-none border-main-500 placeholder-stone-400 text-sm text-stone-50 py-2 focus:outline-none"
                     placeholder="A provoking name"
                     {...register("name")}
                   />
@@ -139,7 +139,7 @@ function AddMarathonModal({ isOpen, setIsOpen }) {
                   <input
                     id="theme"
                     type="text"
-                    className="bg-transparent border-b-2 border-main-500 placeholder-stone-400 text-sm text-stone-50 py-2 focus:outline-none"
+                    className="bg-transparent border-b-2 rounded-none border-main-500 placeholder-stone-400 text-sm text-stone-50 py-2 focus:outline-none"
                     placeholder="A good description of your creation"
                     {...register("theme")}
                   />
@@ -168,7 +168,7 @@ function AddMarathonModal({ isOpen, setIsOpen }) {
                   </span>
                   <input
                     type="text"
-                    className="bg-transparent border-b-2 border-main-500 placeholder-stone-400 text-sm text-stone-50 py-2 focus:outline-none"
+                    className="bg-transparent border-b-2 rounded-none border-main-500 placeholder-stone-400 text-sm text-stone-50 py-2 focus:outline-none"
                     placeholder="e.g. Lord of the Rings"
                     value={query}
                     onChange={(e) => setQuery(e.target.value)}

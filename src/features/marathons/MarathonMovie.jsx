@@ -40,16 +40,16 @@ function MarathonMovie({ movie }) {
         {/* Movie Info */}
         <div className="grow">
           <a
-            className="text-stone-50 text-base font-semibold cursor-pointer transition-all duration-200 hover:text-main-500"
+            className="text-stone-50 text-sm sm:text-base font-semibold cursor-pointer transition-all duration-200 hover:text-main-500"
             onClick={() => navigate(`/movies/${movie.id}`)}
           >
             {data.Title}
           </a>
           <div className="flex gap-6">
-            <p className="text-stone-50 text-sm">
+            <p className="text-stone-50 text-xs sm:text-sm">
               Theme relevance: <span>{movie.score1 || "--"}</span>
             </p>
-            <p className="text-stone-50 text-sm">
+            <p className="text-stone-50 text-xs sm:text-sm">
               Enjoyability: <span>{movie.score2 || "--"}</span>
             </p>
           </div>
