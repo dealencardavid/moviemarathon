@@ -12,7 +12,7 @@ export function useMovie() {
         try {
           setIsLoading(true);
           const res = await fetch(
-            `http://www.omdbapi.com/?apikey=${
+            `https://www.omdbapi.com/?apikey=${
               import.meta.env.VITE_API_KEY
             }&i=${movieId}`
           );
