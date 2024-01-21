@@ -20,6 +20,8 @@ import tailwind from "../assets/logos/tailwind.png";
 import framermotion from "../assets/logos/framermotion.png";
 import reactrouter from "../assets/logos/reactrouter.png";
 import netlify from "../assets/logos/netlify.png";
+import reactquery from "../assets/logos/reactquery.png";
+import supabase from "../assets/logos/supabase.png";
 
 export const techs = [
   {
@@ -42,10 +44,22 @@ export const techs = [
     href: "https://www.framer.com/motion/",
   },
   {
+    name: "React Query",
+    label: "Data-Fetching",
+    icon: reactquery,
+    href: "https://tanstack.com/query/latest",
+  },
+  {
     name: "React Router",
     label: "Routing",
     icon: reactrouter,
     href: "https://reactrouter.com/en/main",
+  },
+  {
+    name: "Supabase",
+    label: "Backend",
+    icon: supabase,
+    href: "https://supabase.com/",
   },
   {
     name: "Netlify",
