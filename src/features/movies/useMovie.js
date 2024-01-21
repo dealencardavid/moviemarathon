@@ -1,8 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
-const KEY = "5cad7de";
-
 export function useMovie() {
   const { movieId } = useParams();
   const [movie, setMovie] = useState({});
@@ -14,7 +12,9 @@ export function useMovie() {
         try {
           setIsLoading(true);
           const res = await fetch(
-            `http://www.omdbapi.com/?apikey=${KEY}&i=${movieId}`
+            `http://www.omdbapi.com/?apikey=${
+              import.meta.env.API_KEY
+            }&i=${movieId}`
           );
           const data = await res.json();
           setMovie(data);
