@@ -3,7 +3,7 @@ import SortBy from "../../ui/SortBy";
 
 function MarathonsTableOperations() {
   return (
-    <div className="flex flex-col lg:flex-row gap-4">
+    <div className="flex flex-col lg:flex-row gap-2 sm:gap-4">
       <Filter
         filterField="finished"
         options={[

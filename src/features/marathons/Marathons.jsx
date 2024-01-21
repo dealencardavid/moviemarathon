@@ -4,9 +4,11 @@ import MarathonsTableOperations from "./MarathonsTableOperations";
 function Marathons() {
   return (
     <>
-      <div className="flex justify-between items-center h-11">
+      <div className="flex justify-between items-center">
         {/* HEADING */}
-        <h2 className="text-stone-50 text-2xl font-bold">All marathons</h2>
+        <h2 className="text-stone-50 text-xl sm:text-2xl font-bold">
+          All marathons
+        </h2>
         {/* SORT/FILTERING */}
         <MarathonsTableOperations />
       </div>

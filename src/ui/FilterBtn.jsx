@@ -3,7 +3,7 @@ function FilterBtn({ children, active, disabled, handleClick }) {
 
   return (
     <button
-      className={`${isActiveStyle} rounded-md p-2 text-sm font-medium hover:bg-main-500 hover:text-stone-50 transition-all duration-200`}
+      className={`${isActiveStyle} rounded-md p-2 text-xs sm:text-sm font-medium hover:bg-main-500 hover:text-stone-50 transition-all duration-200`}
       onClick={handleClick}
       disabled={disabled}
     >

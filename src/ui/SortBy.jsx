@@ -11,7 +11,7 @@ function SortBy({ options }) {
 
   return (
     <select
-      className=" bg-stone-800 border-[0.5px] border-stone-600 rounded-lg shadow-lg p-2 text-sm font-medium text-stone-400  focus:ring-main-500"
+      className=" bg-stone-800 border-[0.5px] border-stone-600 rounded-lg shadow-lg p-2 text-xs sm:text-sm font-medium text-stone-400  focus:ring-main-500"
       name="sort"
       id="sort-select"
       onChange={handleChange}

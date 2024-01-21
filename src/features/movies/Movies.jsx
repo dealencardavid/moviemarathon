@@ -6,7 +6,9 @@ function Movies() {
     <>
       <div className="flex justify-between items-center h-11">
         {/* HEADING */}
-        <h2 className="text-stone-50 text-2xl font-bold">All movies</h2>
+        <h2 className="text-stone-50 text-xl sm:text-2xl font-bold">
+          All movies
+        </h2>
         {/* SORT/FILTERING
         <MoviesTableOperations /> */}
       </div>
