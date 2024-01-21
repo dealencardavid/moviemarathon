@@ -56,7 +56,7 @@ function AddMarathonModal({ isOpen, setIsOpen }) {
     };
     if (
       !addedMovies.some((movie) => movie.id === id) &
-      (addedMovies.length < import.meta.env.MAX_MOVIES)
+      (addedMovies.length < import.meta.env.VITE_MAX_MOVIES)
     )
       setAddedMovies((prevMovies) => [...prevMovies, newMovie]);
   }

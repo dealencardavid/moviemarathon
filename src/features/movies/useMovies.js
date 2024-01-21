@@ -16,7 +16,7 @@ export function useMovies(query) {
 
           const res = await fetch(
             `http://www.omdbapi.com/?apikey=${
-              import.meta.env.API_KEY
+              import.meta.env.VITE_API_KEY
             }&s=${query}`,
             { signal: controller.signal }
           );

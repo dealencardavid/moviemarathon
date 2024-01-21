@@ -6,7 +6,9 @@ export function useMovieDetails(id) {
     function () {
       async function getMovieDetails() {
         const res = await fetch(
-          `http://www.omdbapi.com/?apikey=${import.meta.env.API_KEY}&i=${id}`
+          `http://www.omdbapi.com/?apikey=${
+            import.meta.env.VITE_API_KEY
+          }&i=${id}`
         );
         const data = await res.json();
         setMovie(data);
