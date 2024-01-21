@@ -24,22 +24,26 @@ function NextMovie({ marathon }) {
   return (
     <div className="flex flex-col gap-1 max-w-lg">
       <h3 className=" text-2xl font-semibold text-main-500">Next movie</h3>
-      <div className="bg-stone-800 rounded-md shadow-lg p-1 flex gap-4 items-center">
-        <img src={poster} className=" max-h-80" />
+      <div className="bg-stone-800 rounded-md shadow-lg p-1 flex gap-4 sm:items-center">
+        <img src={poster} className=" max-h-40 sm:max-h-80" />
         <div className="flex flex-col gap-1 py-1">
           <div className="flex flex-col">
-            <p className="text-stone-50 text-xl font-medium">{title}</p>
-            <p className="text-stone-300 font-medium text-sm">{genre}</p>
+            <p className="text-stone-50 text-sm sm:text-xl font-medium">
+              {title}
+            </p>
+            <p className="text-stone-300 font-medium text-xs sm:text-sm">
+              {genre}
+            </p>
           </div>
           <div className="flex gap-2 flex-wrap">
-            <div className="flex items-center gap-1 text-sm font-medium text-stone-500">
+            <div className="flex items-center gap-1 text-xs sm:text-sm font-medium text-stone-500">
               <HiOutlineStar className="text-main-400" /> {imdbRating} IMDb
               rating
             </div>
-            <div className="flex items-center gap-1 text-sm font-medium text-stone-500">
+            <div className="flex items-center gap-1 text-xs sm:text-sm font-medium text-stone-500">
               <HiOutlineCalendarDays className="text-main-400" /> {year}
             </div>
-            <div className="flex items-center gap-1 text-sm font-medium text-stone-500">
+            <div className="flex items-center gap-1 text-xs sm:text-sm font-medium text-stone-500">
               <HiOutlineClock className="text-main-400" /> {runtime}
             </div>
           </div>
