@@ -6,8 +6,6 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { useMovies } from "../../features/movies/useMovies";
 import { useCreateMarathon } from "../../features/marathons/useCreateMarathon";
 
-import { MAX_MOVIES } from "../../services/appConfigs";
-
 import { HiMiniXMark } from "react-icons/hi2";
 import SearchedMovie from "../../ui/SearchedMovie";
 import AddedMovie from "../../ui/AddedMovie";
@@ -119,7 +117,7 @@ function AddMarathonModal({ isOpen, setIsOpen }) {
     };
     if (
       !addedMovies.some((movie) => movie.id === id) &
-      (addedMovies.length < MAX_MOVIES)
+      (addedMovies.length < import.meta.env.MAX_MOVIES)
     )
       setAddedMovies((prevMovies) => [...prevMovies, newMovie]);
   }

@@ -5,8 +5,6 @@ import { useMarathon } from "./useMarathon";
 import { useAddMarathonMovie } from "./useAddMarathonMovie";
 import { useMovies } from "../movies/useMovies";
 
-import { MAX_MOVIES } from "../../services/appConfigs";
-
 import Table from "../../ui/Table";
 import MarathonMovie from "./MarathonMovie";
 import AddedMovie from "../../ui/AddedMovie";
@@ -141,7 +139,7 @@ function AddMovieModal({ isOpen, setIsOpen, marathon }) {
     };
     if (
       !marathonMovies.some((movie) => movie.id === id) &
-      (marathonMovies.length < MAX_MOVIES)
+      (marathonMovies.length < import.meta.env.MAX_MOVIES)
     )
       setMarathonMovies((prevMovies) => [...prevMovies, newMovie]);
   }

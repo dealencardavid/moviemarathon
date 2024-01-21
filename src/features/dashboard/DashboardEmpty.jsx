@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useCreateMarathon } from "../marathons/useCreateMarathon";
 import { useForm } from "react-hook-form";
 import { useMovies } from "../movies/useMovies";
-import { MAX_MOVIES } from "../../services/appConfigs";
+
 import { AnimatePresence, motion } from "framer-motion";
 import AddedMovie from "../../ui/AddedMovie";
 import SearchedMovie from "../../ui/SearchedMovie";
@@ -56,7 +56,7 @@ function AddMarathonModal({ isOpen, setIsOpen }) {
     };
     if (
       !addedMovies.some((movie) => movie.id === id) &
-      (addedMovies.length < MAX_MOVIES)
+      (addedMovies.length < import.meta.env.MAX_MOVIES)
     )
       setAddedMovies((prevMovies) => [...prevMovies, newMovie]);
   }
