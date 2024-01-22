@@ -9,8 +9,6 @@ export function useAddMarathonMovie() {
 
   const { mutate: addMovie, isLoading } = useMutation({
     mutationFn: (updatedMoviesArr) => {
-      console.log(updatedMoviesArr);
-
       updateMarathonMovies(marathonId, updatedMoviesArr);
     },
 
