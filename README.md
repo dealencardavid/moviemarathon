@@ -14,3 +14,7 @@ As a movie enthusiast, I desired a tool that would enable me to select a theme b
 
 - **Frontend:** React
 - **Additional Tools:** TailwindCSS, FramerMotion, ReactRouter, ReactQuery(TanstackQuery), Supabase, Netlify.
+
+## Contributing
+
+ Feel free to clone the repo, explore the code and see how it was developed! Your feedback and suggestions for improvement are greatly appreciated and welcomed.
