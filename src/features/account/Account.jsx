@@ -22,7 +22,7 @@ function Account() {
       </div>
       {/* USERS CONTAINER */}
       <div className="grid place-items-center h-full">
-        <div className=" max-w-xl w-full h-full border-[0.5px] border-stone-600 rounded-lg px-12 py-8 flex flex-col justify-between items-center">
+        <div className="max-w-xl w-full h-full border-[0.5px] border-stone-600 rounded-lg px-8 py-4 flex flex-col justify-between items-center">
           <div className="w-full flex flex-col gap-6">
             {/* USER NAME */}
             <div className="flex flex-col gap-1">

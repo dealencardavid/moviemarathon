@@ -14,7 +14,7 @@ function UpdatePassword() {
     });
   }
   return (
-    <fieldset className=" border-[0.5px] border-stone-700 p-4 rounded-md shadow-lg flex flex-col gap-3">
+    <fieldset className=" border-[0.5px] border-stone-700 p-3 rounded-md shadow-lg flex flex-col gap-3">
       <h3 className="text-stone-200 text-base font-medium">
         Update your password
       </h3>
