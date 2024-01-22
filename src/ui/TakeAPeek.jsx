@@ -53,8 +53,8 @@ function TechPeek({ label, title, img, children, btn = "Link", link }) {
     >
       <motion.div
         variants={{
-          initial: { height: "224px" },
-          hover: { height: "176px" },
+          initial: { height: "192px" },
+          hover: { height: "144px" },
         }}
         transition={{
           ease: "easeInOut",
@@ -62,7 +62,7 @@ function TechPeek({ label, title, img, children, btn = "Link", link }) {
         }}
         className=" bg-stone-50 rounded shadow-inner overflow-hidden"
       >
-        <img alt="Cover" src={img} className=" " />
+        <img alt="Cover" src={img} className="" />
       </motion.div>
       <div className="overflow-hidden group flex flex-col gap-4 px-6">
         <div className="flex flex-col items-start">

@@ -38,7 +38,7 @@ function Dashboard() {
         </div>
       </div>
 
-      <div className="h-full w-full grid xl:place-items-stretch place-items-center gap-2 xl:grid-cols-[1fr_512px] xl:gap-6 container mx-auto pb-4">
+      <div className="h-full w-full grid xl:place-items-stretch place-items-center gap-2 xl:grid-cols-[1fr_512px] xl:gap-6 container mx-auto">
         {activeMarathon ? (
           <DashboardFull marathon={activeMarathon} isFinished={isFinished} />
         ) : (

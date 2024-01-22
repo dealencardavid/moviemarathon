@@ -195,7 +195,7 @@ function AddMovieModal({ isOpen, setIsOpen, marathon }) {
                     Chosen movies (max. 9)
                   </p>
 
-                  <div className="grid grid-cols-2 gap-4 max-h-90 overflow-auto">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-h-90 overflow-auto">
                     {marathonMovies?.map((movie, index) => (
                       <AddedMovie
                         key={index}
@@ -213,7 +213,7 @@ function AddMovieModal({ isOpen, setIsOpen, marathon }) {
                   </span>
                   <input
                     type="text"
-                    className="bg-transparent border-b-2 border-main-500 placeholder-stone-400 text-sm text-stone-50 py-2 focus:outline-none"
+                    className="bg-transparent border-b-2 border-main-500 placeholder-stone-400 text-sm text-stone-50 py-2 rounded-none focus:outline-none"
                     placeholder="e.g. Lord of the Rings"
                     value={query}
                     onChange={(e) => setQuery(e.target.value)}
@@ -221,7 +221,7 @@ function AddMovieModal({ isOpen, setIsOpen, marathon }) {
                 </div>
 
                 {/* Results Container Grid */}
-                <div className="grid grid-cols-2 gap-4 max-h-48 overflow-auto">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-h-48 overflow-auto">
                   {/* Result */}
                   {movies?.map((movie, index) => (
                     <SearchedMovie

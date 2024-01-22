@@ -25,7 +25,7 @@ function AboutProject() {
           ambient low light , the lettering from movie posters , and the
           containers defined by the screens.
         </p>
-        <div className="grid w-[400px] grid-cols-2 md:grid-cols-1 md:w-[180px] lg:grid-cols-2 lg:w-[400px] gap-6 md:col-start-1 md:row-start-1">
+        <div className="grid grid-cols-2 md:grid-cols-1 md:w-[180px] lg:grid-cols-2 lg:w-[400px] gap-6 md:col-start-1 md:row-start-1">
           <img alt="Profile picture" src={avatar} className=" rounded-md" />
           <div className="flex flex-col gap-4">
             <div>

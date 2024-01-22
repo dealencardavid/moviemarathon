@@ -3,6 +3,7 @@ import { useSearchParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { useMarathons } from "./useMarathons";
 
+import AddMarathonModal from "./AddMarathonModal";
 import DashboardEmpty from "../dashboard/DashboardEmpty";
 import MarathonRow from "./MarathonRow";
 import TableBody from "../../ui/TableBody";
@@ -10,6 +11,7 @@ import Loader from "../../ui/Loader";
 import Table from "../../ui/Table";
 
 function MarathonsTable() {
+  const [isOpen, setIsOpen] = useState(false);
   const { isLoading, marathons } = useMarathons();
   const { setActive, isSettingActive } = useSetMarathonActive();
   const [searchParams] = useSearchParams();
@@ -54,24 +56,33 @@ function MarathonsTable() {
       (a, b) => (a[field] - b[field]) * modifier
     );
   return (
-    <Table>
-      <div className="grid grid-cols-[100px_1fr_1fr_1fr_100px] w-full bg-stone-900 h-16 rounded-t-lg border-b-[0.5px] border-stone-600  items-center place-items-center text-sm sm:text-base">
-        <p className="text-stone-50 font-semibold ">Active</p>
-        <p className="text-stone-50 font-semibold ">Marathon</p>
-        <p className="text-stone-50 font-semibold">Nº of movies</p>
-        <p className="text-stone-50 font-semibold">Curation score</p>
-      </div>
-      <TableBody>
-        {sortedMarathons.map((marathon, index) => (
-          <MarathonRow
-            marathon={marathon}
-            key={index}
-            checked={checked}
-            setChecked={setChecked}
-          />
-        ))}
-      </TableBody>
-    </Table>
+    <>
+      <AddMarathonModal isOpen={isOpen} setIsOpen={setIsOpen} />
+      <Table>
+        <div className="grid grid-cols-[100px_1fr_1fr_1fr_100px] w-full bg-stone-900 h-16 rounded-t-lg border-b-[0.5px] border-stone-600  items-center place-items-center text-sm sm:text-base">
+          <p className="text-stone-50 font-semibold ">Active</p>
+          <p className="text-stone-50 font-semibold ">Marathon</p>
+          <p className="text-stone-50 font-semibold">Nº of movies</p>
+          <p className="text-stone-50 font-semibold">Curation score</p>
+        </div>
+        <TableBody>
+          {sortedMarathons.map((marathon, index) => (
+            <MarathonRow
+              marathon={marathon}
+              key={index}
+              checked={checked}
+              setChecked={setChecked}
+            />
+          ))}
+        </TableBody>
+      </Table>
+      <button
+        className=" bg-main-500 w-48 py-3 rounded-md text-sm font-semibold text-stone-50 self-center md:hidden"
+        onClick={setIsOpen}
+      >
+        Create new marathon
+      </button>
+    </>
   );
 }
 
