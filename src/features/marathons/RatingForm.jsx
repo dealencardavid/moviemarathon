@@ -36,7 +36,7 @@ function RatingForm({ movie, setFormOpen }) {
             min={1}
             max={10}
             step={0.1}
-            className="bg-transparent border-b-2 border-main-500 py-3 text-center placeholder-stone-400 text-sm text-stone-50"
+            className="bg-transparent border-b-2 border-main-500 py-3 text-center placeholder-stone-400 text-sm rounded-none text-stone-50"
             placeholder="e.g. 8.4"
             {...register("themeRelevance", {
               required: "This field is required",
@@ -54,7 +54,7 @@ function RatingForm({ movie, setFormOpen }) {
             min={1}
             max={10}
             step={0.1}
-            className="bg-transparent border-b-2 border-main-500 py-3 text-center placeholder-stone-400 text-sm text-stone-50"
+            className="bg-transparent border-b-2 border-main-500 py-3 text-center placeholder-stone-400 rounded-none text-sm text-stone-50"
             placeholder="e.g. 8.4"
             {...register("enjoyability", {
               required: "This field is required",
