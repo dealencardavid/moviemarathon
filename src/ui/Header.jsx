@@ -49,7 +49,7 @@ function Header() {
           <Button type="outline" to="login">
             Login
           </Button>
-          <Button type="primary" to="login">
+          <Button type="primary" to="createaccount">
             Create account
           </Button>
         </div>
