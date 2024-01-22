@@ -4,9 +4,13 @@ Made by David de Alencar.
 
 ## Overview
 
-MovieMarathon is a web application that empowers users to curate and organize personalized film marathons. The platform allows users to select a theme, choose a collection of movies related to the theme, and rate their overall experience after watching the curated marathon.
+This is [MovieMarathon](https://moviemarathon-alencar.netlify.app/)! A web application that empowers users to curate and organize personalized film marathons.
+
+## Movivation
+
+As a movie enthusiast, I desired a tool that would enable me to select a theme based on a genre, date, or just a vibe, choose a set of movies that fit that theme, and then rate the movies — not based on how good or bad I think they are, but on how much fun I had watching them and how well they fit into the marathon. So, I built [MovieMarathon](https://moviemarathon-alencar.netlify.app/).
 
 ## Technologies Used
 
 - **Frontend:** React
-- **Additional Tools:** TailwindCSS, FramerMotion, ReactRouter
+- **Additional Tools:** TailwindCSS, FramerMotion, ReactRouter, ReactQuery(TanstackQuery), Supabase, Netlify.
