@@ -9,7 +9,7 @@ function DashboardFull({ marathon, isFinished }) {
       <CurrentMarathon marathon={marathon} />
       <div className="flex flex-col gap-4 justify-between w-full items-center">
         {!isFinished ? <NextMovie marathon={marathon} /> : <FinishedMarathon />}
-        <QuickGlance />;
+        <QuickGlance />
       </div>
     </>
   );

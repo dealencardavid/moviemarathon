@@ -1,12 +1,13 @@
-import { useMarathons } from "./useMarathons";
-import Table from "../../ui/Table";
-import TableBody from "../../ui/TableBody";
-import MarathonRow from "./MarathonRow";
-import { useEffect, useState } from "react";
 import { useSetMarathonActive } from "./useSetMarathonActive";
 import { useSearchParams } from "react-router-dom";
-import Loader from "../../ui/Loader";
+import { useEffect, useState } from "react";
+import { useMarathons } from "./useMarathons";
+
 import DashboardEmpty from "../dashboard/DashboardEmpty";
+import MarathonRow from "./MarathonRow";
+import TableBody from "../../ui/TableBody";
+import Loader from "../../ui/Loader";
+import Table from "../../ui/Table";
 
 function MarathonsTable() {
   const { isLoading, marathons } = useMarathons();
